@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
-
+using MilkShake;
 
 
 public class PlayerController : MonoBehaviour
@@ -15,7 +15,9 @@ public class PlayerController : MonoBehaviour
    Camera cam;
    //Utilizada para poder travar a rotação no angulo que quisermos.
    float cameraRotation;
-   float _baseSpeed = 10.0f;
+
+   float runningVel = 10f;
+   float _baseSpeed = 6.0f;
    float _gravidade = 4.0f; 
    float maxSpeed = 1f;
    public GameObject tip;
@@ -24,6 +26,11 @@ public class PlayerController : MonoBehaviour
    
    float y = 0;
    float x = 0;
+
+    [SerializeField]
+   Shaker shaker;
+   [SerializeField]
+   ShakePreset shaker_preset;
 
    public float horizontalJump = 12f;
 
@@ -71,6 +78,17 @@ public class PlayerController : MonoBehaviour
    {
         x  /= 1.5f;
         x += Input.GetAxis("Horizontal");
+
+
+        if (Input.GetKeyDown(KeyCode.LeftShift)){
+        
+            _baseSpeed = runningVel;
+            shaker.Shake(shaker_preset);
+        }
+        
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+            _baseSpeed = 6f;
+
         
         if (Math.Abs(x) > maxSpeed)
             x = (x > 0) ? (maxSpeed) : (-maxSpeed) ; 
@@ -100,7 +118,7 @@ public class PlayerController : MonoBehaviour
                 isFirstTime = false;
                 y = 0;} 
             if (Input.GetKeyDown(KeyCode.Space)){
-                y += jump;
+                y += jump * _baseSpeed;
 
                 if (isWallLeft)
                     x += horizontalJump;
@@ -174,13 +192,11 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = startPosition;
 
-    }
-
-    void OnColissionEnter(Collision col){
-        Debug.Log("ENtreei na colisaõ");
-        if (col.collider.tag == "Coin" ){
-            Destroy(col.gameObject);
-            gm.points++;}
-    }
-        
+    } 
+    void OnControllerColliderHit(ControllerColliderHit hit){
+        if (hit.collider.tag == "Coin"){
+            Destroy(hit.collider.gameObject);
+            gm.coins++; 
+        }
+        }      
 } 

@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager
 {
     public enum GameState { GAME, PAUSE };
     public GameState gameState { get; private set; }
     public GameState lastState { get; private set; }
-    public int points;
+    public int coins;
+    public int totalCoins;
        
     public delegate void ChangeStateDelegate();
     public static ChangeStateDelegate changeStateDelegate;
 
     private static GameManager _instance;
-
-    
+ 
+     
     private GameManager()
     {
-        points = 0;
+        coins = 0;
         gameState = GameState.GAME;
+        totalCoins = 1;
     }
 
 
@@ -41,6 +43,6 @@ public class GameManager : MonoBehaviour
 
     private void Reset()
     {
-        points = 0;
+        coins = 0;
     }
 }

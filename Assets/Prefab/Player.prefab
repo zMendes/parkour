@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 5663049612150670264}
   - component: {fileID: 5663049612150670271}
   - component: {fileID: 5663049612150670270}
+  - component: {fileID: 6898569372606514116}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -119,12 +120,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5663049612150670269}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.65, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5663049612162328689}
-  m_RootOrder: 1
+  m_Father: {fileID: 1726507121572017132}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &5663049612150670271
 Camera:
@@ -177,6 +178,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5663049612150670269}
   m_Enabled: 1
+--- !u!114 &6898569372606514116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5663049612150670269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1697a0132719bae458729c9e99c0c716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addToGlobalShakers: 0
 --- !u!1 &5663049612162328688
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +221,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5663049611693452855}
-  - {fileID: 5663049612150670264}
+  - {fileID: 1726507121572017132}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -242,8 +256,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tip: {fileID: 0}
+  shaker: {fileID: 6898569372606514116}
+  shaker_preset: {fileID: 11400000, guid: 2e2d76c0f16202d4c887bcb270087e49, type: 2}
   horizontalJump: 12
   isWall:
     serializedVersion: 2
     m_Bits: 512
   startPosition: {x: 53.5, y: 10.8, z: 36.5}
+  zoomRate: 0
+  minFOV: 0
+  maxFOV: 0
+--- !u!1 &8897107803074700974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1726507121572017132}
+  m_Layer: 0
+  m_Name: CapsulaCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1726507121572017132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8897107803074700974}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.643, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5663049612150670264}
+  m_Father: {fileID: 5663049612162328689}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
