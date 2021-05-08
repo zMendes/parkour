@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class UI_Menu : MonoBehaviour
 {
+
+    GameManager gm;
     // Start is called before the first frame update
     void OnEnable()
     {
+        gm = GameManager.GetInstance();
         
     }
     public void Play(){
@@ -14,5 +17,15 @@ public class UI_Menu : MonoBehaviour
         Loader.Load(Loader.Scene.Level1);
 
         
+    }
+
+    public void Options(){
+
+        gm.ChangeState(GameManager.GameState.OPTIONS);
+    }
+
+    public void Chapters(){
+
+        gm.ChangeState(GameManager.GameState.CHAPTERS);
     }
 }

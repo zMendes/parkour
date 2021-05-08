@@ -59,9 +59,10 @@ public class PlayerController : MonoBehaviour
    
    void Start()
    {
-    //    DontDestroyOnLoad(gameObject);
+
+
         gm = GameManager.GetInstance();
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         characterController = GetComponent<CharacterController>();
         playerCamera = GameObject.Find("Main Camera");
         // cam = GetComponent<Camera>();
@@ -147,8 +148,12 @@ public class PlayerController : MonoBehaviour
    void Update()
     {
         // currentFOV = cam.fieldOfView;
-
+        
         if (Input.GetKeyDown(KeyCode.Escape))
+            gm.ChangeState(GameManager.GameState.PAUSE);
+
+
+        if (Input.GetKeyDown(KeyCode.Q))
             tip.gameObject.SetActive(false);
 
         if (Input.GetMouseButtonDown(0)){
@@ -198,5 +203,7 @@ public class PlayerController : MonoBehaviour
             Destroy(hit.collider.gameObject);
             gm.coins++; 
         }
-        }      
+    }
+
+
 } 
