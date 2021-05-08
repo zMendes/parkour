@@ -4,25 +4,19 @@ using UnityEngine;
 
 public class GameManager
 {
-    public enum GameState { MENU, GAME, PAUSE, OPTIONS, CHAPTERS  };
+
+    public enum GameState { MENU, GAME, ENDGAME, CONTROL, OPTIONS, CHAPTERS };
+
     public GameState gameState { get; private set; }
     public GameState lastState { get; private set; }
     public int coins;
     public int totalCoins;
-       
+
+
     public delegate void ChangeStateDelegate();
     public static ChangeStateDelegate changeStateDelegate;
 
     private static GameManager _instance;
- 
-     
-    private GameManager()
-    {
-        coins = 0;
-        gameState = GameState.MENU;
-        lastState = GameState.MENU;
-        totalCoins = 1;
-    }
 
 
     public static GameManager GetInstance()
@@ -35,18 +29,31 @@ public class GameManager
        return _instance;
    }
 
+    private GameManager()
+   {
+       coins = 0;
+       totalCoins = 1;
+       
+       gameState = GameState.MENU;
+       lastState = GameState.MENU;
+
+   }
+   
    public void ChangeState(GameState nextState)
     {
-
-        Debug.Log(gameState);
-        Debug.Log(nextState);
         lastState = gameState;
         gameState = nextState;
-        changeStateDelegate();
+        Debug.Log("Entrei na change state;");
+        Debug.Log(gameState);
+        if (changeStateDelegate != null)
+            changeStateDelegate();
     }
 
     private void Reset()
     {
         coins = 0;
+        totalCoins = 0;
     }
+
+
 }

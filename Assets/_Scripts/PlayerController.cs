@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
-using MilkShake;
 
 
 public class PlayerController : MonoBehaviour
@@ -26,11 +25,6 @@ public class PlayerController : MonoBehaviour
    
    float y = 0;
    float x = 0;
-
-    [SerializeField]
-   Shaker shaker;
-   [SerializeField]
-   ShakePreset shaker_preset;
 
    public float horizontalJump = 12f;
 
@@ -62,11 +56,9 @@ public class PlayerController : MonoBehaviour
 
 
         gm = GameManager.GetInstance();
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         characterController = GetComponent<CharacterController>();
         playerCamera = GameObject.Find("Main Camera");
-        // cam = GetComponent<Camera>();
-        // startingFOV = cam.fieldOfView;
         cameraRotation = 0.0f;
         isWallRight = false;
         isWallLeft = false;
@@ -84,7 +76,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)){
         
             _baseSpeed = runningVel;
-            shaker.Shake(shaker_preset);
         }
         
         if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -119,7 +110,7 @@ public class PlayerController : MonoBehaviour
                 isFirstTime = false;
                 y = 0;} 
             if (Input.GetKeyDown(KeyCode.Space)){
-                y += jump * _baseSpeed;
+                y += jump * _baseSpeed/10;
 
                 if (isWallLeft)
                     x += horizontalJump;
@@ -127,16 +118,13 @@ public class PlayerController : MonoBehaviour
                     x -= horizontalJump;
             }
         }
-            
 
             else {
                 isFirstTime = true;
                 y -= _gravidade * Time.deltaTime;}
         
 
-
         Vector3 direction = transform.right * x + transform.up * y + transform.forward * z;
-
 
         characterController.Move(direction * _baseSpeed * Time.deltaTime);
         transform.Rotate(Vector3.up, mouse_dX);
@@ -146,11 +134,12 @@ public class PlayerController : MonoBehaviour
 
 
    void Update()
-    {
-        // currentFOV = cam.fieldOfView;
-        
-        if (Input.GetKeyDown(KeyCode.Escape))
-            gm.ChangeState(GameManager.GameState.PAUSE);
+    {        
+        //if (gm.gameState == GameManager.GameState.MENU)
+            //return;
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            gm.ChangeState(GameManager.GameState.MENU);
+            Cursor.lockState = CursorLockMode.None;}    
 
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -159,7 +148,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0)){
             RaycastHit hit;
             if(Physics.Raycast(playerCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition), out hit, 5)){ 
-                // Debug.Log(hit.collider.tag);
                 if (hit.collider.tag == "Moveable"){ 
                     isMoving = true;
                     moveableOject = hit.collider.gameObject;}
@@ -168,16 +156,11 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0)){
             isMoving = false;
-            // currentFOV = startingFOV;
         }
         if (isMoving){
-            moveableOject.transform.position = new Vector3(transform.position.x, moveableOject.transform.position.y, transform.position.z +3.0f);
-            // currentFOV -= zoomRate;
+            moveableOject.transform.position = new Vector3(transform.position.x, moveableOject.transform.position.y, transform.position.z +6.0f);
         }
     
-        // currentFOV = Mathf.Clamp(currentFOV,minFOV, maxFOV);
-        // cam.fieldOfView = currentFOV;
-
         isWallRight = Physics.Raycast(transform.position, transform.right, 1.2f, isWall);
         isWallLeft = Physics.Raycast(transform.position, -transform.right, 1.2f, isWall);
         Running();

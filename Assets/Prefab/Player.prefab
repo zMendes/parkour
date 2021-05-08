@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 5663049612150670264}
   - component: {fileID: 5663049612150670271}
   - component: {fileID: 5663049612150670270}
-  - component: {fileID: 6898569372606514116}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -177,20 +176,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5663049612150670269}
-  m_Enabled: 0
---- !u!114 &6898569372606514116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5663049612150670269}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1697a0132719bae458729c9e99c0c716, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  addToGlobalShakers: 0
 --- !u!1 &5663049612162328688
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,8 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tip: {fileID: 0}
-  shaker: {fileID: 6898569372606514116}
-  shaker_preset: {fileID: 11400000, guid: 2e2d76c0f16202d4c887bcb270087e49, type: 2}
   horizontalJump: 12
   isWall:
     serializedVersion: 2

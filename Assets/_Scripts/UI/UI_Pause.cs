@@ -15,14 +15,12 @@ public class UI_Pause : MonoBehaviour
     public void Resume()
     {
         gm.ChangeState(GameManager.GameState.GAME);
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Exit()
     {
-        gm.ChangeState(GameManager.GameState.GAME);
         Loader.Load(Loader.Scene.Menu);
-        //Arrumar
     }
     public void Options()
     {
