@@ -13,4 +13,5 @@ public static class  Loader
     {
         SceneManager.LoadScene(scene.ToString());
     }
+
 } 

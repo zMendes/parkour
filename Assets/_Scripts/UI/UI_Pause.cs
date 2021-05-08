@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class UI_Pause : MonoBehaviour
 {
 
@@ -10,7 +10,7 @@ public class UI_Pause : MonoBehaviour
     private void OnEnable()
     {
         gm = GameManager.GetInstance();
-    }
+    } 
 
     public void Resume()
     {
@@ -26,4 +26,11 @@ public class UI_Pause : MonoBehaviour
     {
         gm.ChangeState(GameManager.GameState.OPTIONS);
     }
+
+    public void Reset()
+    {
+        gm.ChangeState(GameManager.GameState.GAME);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
 }
