@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
    
    void Start()
    {
-
+    //    DontDestroyOnLoad(gameObject);
         gm = GameManager.GetInstance();
         Cursor.lockState = CursorLockMode.Locked;
         characterController = GetComponent<CharacterController>();
