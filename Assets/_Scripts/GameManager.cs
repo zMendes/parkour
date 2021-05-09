@@ -5,12 +5,17 @@ using UnityEngine;
 public class GameManager
 {
 
-    public enum GameState { MENU, GAME, ENDGAME, CONTROL, OPTIONS, CHAPTERS };
+    public enum GameState { MENU, GAME, ENDGAME, CONTROL, OPTIONS, CHAPTERS, PAUSE };
+    
+    public enum Level { Level1, Level2, Level3, Level4, ENDGAME };
+
 
     public GameState gameState { get; private set; }
     public GameState lastState { get; private set; }
     public int coins;
     public int totalCoins;
+    
+    public Level currentLevel;
 
 
     public delegate void ChangeStateDelegate();
@@ -49,10 +54,8 @@ public class GameManager
             changeStateDelegate();
     }
 
-    private void Reset()
-    {
-        coins = 0;
-        totalCoins = 0;
+    public void setLevel(Level level){
+        currentLevel = level;
     }
 
 

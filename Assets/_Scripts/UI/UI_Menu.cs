@@ -14,8 +14,7 @@ public class UI_Menu : MonoBehaviour
     }
     public void Play(){
         Loader.Load(Loader.Scene.Level1);
-        GameManager.changeStateDelegate = null;
-
+        gm.setLevel(GameManager.Level.Level1);
         gm.ChangeState(GameManager.GameState.GAME);
         
     }

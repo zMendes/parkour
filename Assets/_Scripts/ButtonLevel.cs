@@ -28,6 +28,10 @@ public class ButtonLevel : MonoBehaviour
         Debug.Log(gm.coins);
         Debug.Log(gm.totalCoins);
         if (Vector3.Distance(this.transform.position,player.transform.position) < 7 & gm.coins >= gm.totalCoins) 
+        gm.setLevel(gm.currentLevel + 1);
+        if (gm.currentLevel == GameManager.Level.ENDGAME)
+          gm.ChangeState(GameManager.GameState.ENDGAME);
+        else 
           Loader.Load(scene);
   } 
 }

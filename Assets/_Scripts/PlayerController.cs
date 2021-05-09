@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using System.Linq;
 
 
 public class PlayerController : MonoBehaviour
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
    float _baseSpeed = 6.0f;
    float _gravidade = 4.0f; 
    float maxSpeed = 1f;
-   public GameObject tip;
+   private GameObject tip;
    
    GameObject moveableOject;
    
@@ -64,6 +65,14 @@ public class PlayerController : MonoBehaviour
         isWallLeft = false;
         isMoving = false;
         transform.position = startPosition;
+
+
+        if (gm.currentLevel == GameManager.Level.Level1)
+            tip = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g=>g.CompareTag("Level1"));        
+        else if (gm.currentLevel == GameManager.Level.Level2)
+            tip = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g=>g.CompareTag("Level2"));        
+        else if (gm.currentLevel == GameManager.Level.Level3)
+            tip = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g=>g.CompareTag("Level3"));   
    }
 
 
@@ -135,10 +144,10 @@ public class PlayerController : MonoBehaviour
 
    void Update()
     {        
-        //if (gm.gameState == GameManager.GameState.MENU)
-            //return;
+        if (gm.gameState != GameManager.GameState.GAME)
+            return;
         if (Input.GetKeyDown(KeyCode.Escape)){
-            gm.ChangeState(GameManager.GameState.MENU);
+            gm.ChangeState(GameManager.GameState.PAUSE);
             Cursor.lockState = CursorLockMode.None;}    
 
 

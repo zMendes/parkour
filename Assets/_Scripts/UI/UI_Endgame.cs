@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Options : MonoBehaviour
+public class UI_Endgame : MonoBehaviour
 {
     GameManager gm;
 
-    private void OnEnable()
-    {
+    public void Start(){
         gm = GameManager.GetInstance();
     }
-    
+
     public void Exit()
     {
-        gm.ChangeState(gm.lastState);
+        gm.ChangeState(GameManager.GameState.MENU);
     }
 }

@@ -12,36 +12,31 @@ public class UI_Chapters : MonoBehaviour
     }
     public void Level1() 
     {
+        
         gm.ChangeState(GameManager.GameState.GAME);
-        GameManager.changeStateDelegate = null;
+        gm.setLevel(GameManager.Level.Level1);
         Loader.Load(Loader.Scene.Level1);
+        
     }
 
     public void Level2()
     {
         gm.ChangeState(GameManager.GameState.GAME);
-        GameManager.changeStateDelegate = null;
+        gm.setLevel(GameManager.Level.Level2);
         Loader.Load(Loader.Scene.Level2);
     }
 
     public void Level3()
     {
         gm.ChangeState(GameManager.GameState.GAME);
-        GameManager.changeStateDelegate = null;
+        gm.setLevel(GameManager.Level.Level3);
         Loader.Load(Loader.Scene.Level3);        
     }
 
     public void Level4()
     {
         gm.ChangeState(GameManager.GameState.GAME);
-        GameManager.changeStateDelegate = null;
+        gm.setLevel(GameManager.Level.Level4);
         Loader.Load(Loader.Scene.Level4);
-    }
-
-    public void Level5()
-    {
-        gm.ChangeState(GameManager.GameState.GAME);
-        GameManager.changeStateDelegate = null;
-        Loader.Load(Loader.Scene.Level5);
     }
 }

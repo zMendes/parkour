@@ -20,7 +20,7 @@ public class UI_Pause : MonoBehaviour
 
     public void Exit()
     {
-        Loader.Load(Loader.Scene.Menu);
+        gm.ChangeState(GameManager.GameState.MENU);
     }
     public void Options()
     {
