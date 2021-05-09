@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinRotate : MonoBehaviour
+public class Rotate : MonoBehaviour
 {
 
     void Update()
     {  
-        transform.Rotate(new Vector3(0f, 0f, 1f));   
+        transform.Rotate(new Vector3(0f, 100f, 0f) * Time.deltaTime );   
     }
 }
