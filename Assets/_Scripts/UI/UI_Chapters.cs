@@ -15,6 +15,7 @@ public class UI_Chapters : MonoBehaviour
         
         gm.ChangeState(GameManager.GameState.GAME);
         gm.setLevel(GameManager.Level.Level1);
+        gm.coins = 0;
         Loader.Load(Loader.Scene.Level1);
         
     }
@@ -23,6 +24,7 @@ public class UI_Chapters : MonoBehaviour
     {
         gm.ChangeState(GameManager.GameState.GAME);
         gm.setLevel(GameManager.Level.Level2);
+        gm.coins = 0;
         Loader.Load(Loader.Scene.Level2);
     }
 
@@ -30,6 +32,7 @@ public class UI_Chapters : MonoBehaviour
     {
         gm.ChangeState(GameManager.GameState.GAME);
         gm.setLevel(GameManager.Level.Level3);
+        gm.coins = 0;
         Loader.Load(Loader.Scene.Level3);        
     }
 
@@ -37,6 +40,7 @@ public class UI_Chapters : MonoBehaviour
     {
         gm.ChangeState(GameManager.GameState.GAME);
         gm.setLevel(GameManager.Level.Level4);
+        gm.coins = 0;
         Loader.Load(Loader.Scene.Level4);
     }
 }

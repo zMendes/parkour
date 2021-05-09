@@ -16,6 +16,7 @@ public class UI_Reset : MonoBehaviour
 
         public void Reset()
         {
+            gm.coins = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 }

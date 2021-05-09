@@ -7,6 +7,7 @@ public class UI_Endgame : MonoBehaviour
     GameManager gm;
 
     public void Start(){
+        gm.coins = 0;
         gm = GameManager.GetInstance();
     }
 

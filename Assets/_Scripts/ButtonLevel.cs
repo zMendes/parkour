@@ -31,8 +31,9 @@ public class ButtonLevel : MonoBehaviour
         gm.setLevel(gm.currentLevel + 1);
         if (gm.currentLevel == GameManager.Level.ENDGAME)
           gm.ChangeState(GameManager.GameState.ENDGAME);
-        else 
-          Loader.Load(scene);
+        else{
+          gm.coins = 0;
+          Loader.Load(scene);}
   } 
 }
  
