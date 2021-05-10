@@ -154,17 +154,21 @@ public class PlayerController : MonoBehaviour
     {
         
         if (gm.gameState != GameManager.GameState.GAME){
-            Cursor.lockState = CursorLockMode.None;    
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;    
             return;
         }
         else {
             
             Cursor.lockState = CursorLockMode.Locked;    
+            Cursor.visible = false;
+
 
         }
         if (Input.GetKeyDown(KeyCode.Escape)){
             gm.ChangeState(GameManager.GameState.PAUSE);
-            Cursor.lockState = CursorLockMode.None;}    
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;}    
 
 
         if (Input.GetKeyDown(KeyCode.Q))
