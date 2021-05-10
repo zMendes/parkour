@@ -143,9 +143,17 @@ public class PlayerController : MonoBehaviour
 
 
    void Update()
-    {        
-        if (gm.gameState != GameManager.GameState.GAME)
+    {
+        
+        if (gm.gameState != GameManager.GameState.GAME){
+            Cursor.lockState = CursorLockMode.None;    
             return;
+        }
+        else {
+            
+            Cursor.lockState = CursorLockMode.Locked;    
+
+        }
         if (Input.GetKeyDown(KeyCode.Escape)){
             gm.ChangeState(GameManager.GameState.PAUSE);
             Cursor.lockState = CursorLockMode.None;}    

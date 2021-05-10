@@ -12,7 +12,5 @@ public class UI_History : MonoBehaviour
 
     public void Continue()
     { 
-        Loader.Load(Loader.Scene.Level1);
-        gm.setLevel(GameManager.Level.Level1);
         gm.ChangeState(GameManager.GameState.GAME);    }
 }

@@ -17,4 +17,5 @@ public class UI_Points : MonoBehaviour
    {
        textComp.text = $"{gm.coins}";
    } 
+
 }

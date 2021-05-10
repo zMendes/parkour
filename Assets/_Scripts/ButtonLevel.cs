@@ -27,13 +27,16 @@ public class ButtonLevel : MonoBehaviour
         Debug.Log("Entrei no mouse down");
         Debug.Log(gm.coins);
         Debug.Log(gm.totalCoins);
-        if (Vector3.Distance(this.transform.position,player.transform.position) < 7 & gm.coins >= gm.totalCoins) 
-        gm.setLevel(gm.currentLevel + 1);
-        if (gm.currentLevel == GameManager.Level.ENDGAME)
-          gm.ChangeState(GameManager.GameState.ENDGAME);
-        else{
-          gm.coins = 0;
-          Loader.Load(scene);}
+        if (Vector3.Distance(this.transform.position,player.transform.position) < 7 && gm.coins >= gm.totalCoins){ 
+            if (gm.currentLevel == GameManager.Level.Level4 )
+              gm.ChangeState(GameManager.GameState.ENDGAME);
+            else {
+              gm.setLevel(gm.currentLevel + 1);
+              gm.coins = 0;
+              Loader.Load(scene);
+              }
+            Destroy(this.gameObject);
+            }
   } 
 }
  

@@ -12,7 +12,9 @@ public class UI_Menu : MonoBehaviour
         gm = GameManager.GetInstance();
         
     }
-    public void Play(){ 
+    public void Play(){
+        Loader.Load(Loader.Scene.Level1);
+        gm.setLevel(GameManager.Level.Level1);
         gm.ChangeState(GameManager.GameState.HISTORY);  
         
     }

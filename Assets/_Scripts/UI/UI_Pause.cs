@@ -29,6 +29,7 @@ public class UI_Pause : MonoBehaviour
 
     public void Reset()
     {
+        gm.coins = 0;
         gm.ChangeState(GameManager.GameState.GAME);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
