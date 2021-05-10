@@ -142,17 +142,17 @@ PrefabInstance:
     - target: {fileID: 2258363972441856682, guid: 5aa5f6ff882c0744a82328562b0fdbc6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2258363972441856682, guid: 5aa5f6ff882c0744a82328562b0fdbc6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2258363972441856682, guid: 5aa5f6ff882c0744a82328562b0fdbc6,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2258363972441856682, guid: 5aa5f6ff882c0744a82328562b0fdbc6,
         type: 3}
@@ -574,7 +574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4999d69dcf24ebf43ab94e51fe12dab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tip: {fileID: 0}
   player: {fileID: 9264234}
 --- !u!43 &518624587
 Mesh:

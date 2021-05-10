@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager
 {
-
-    public enum GameState { MENU, GAME, ENDGAME, CONTROL, OPTIONS, CHAPTERS, PAUSE };
+ 
+    public enum GameState { MENU, GAME, ENDGAME, CONTROL, OPTIONS, CHAPTERS, PAUSE, HISTORY };
     
     public enum Level { Level1, Level2, Level3, Level4, ENDGAME };
 
