@@ -28,4 +28,8 @@ public class UI_Menu : MonoBehaviour
 
         gm.ChangeState(GameManager.GameState.CHAPTERS);
     }
+
+    public void Quit(){
+        Application.Quit();
+    }
 }

@@ -574,7 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4999d69dcf24ebf43ab94e51fe12dab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootSFX: {fileID: 8300000, guid: 8ac3a04313078a9409107c677444044c, type: 3}
+  shootSFX: {fileID: 8300000, guid: ddd2b262fc982804d87ae2ac8dadd344, type: 3}
   player: {fileID: 9264234}
 --- !u!43 &518624587
 Mesh:

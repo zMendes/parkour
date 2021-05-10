@@ -23968,6 +23968,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Question_Mark
       objectReference: {fileID: 0}
+    - target: {fileID: 1067857472119572767, guid: bd5a4a5795ee5bb4396e5e8bfd9a33bc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Level4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672563906687739271, guid: bd5a4a5795ee5bb4396e5e8bfd9a33bc,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1691709501}
+    - target: {fileID: 1672563906687739271, guid: bd5a4a5795ee5bb4396e5e8bfd9a33bc,
+        type: 3}
+      propertyPath: shootSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: ddd2b262fc982804d87ae2ac8dadd344, type: 3}
     - target: {fileID: 6081761858809614884, guid: bd5a4a5795ee5bb4396e5e8bfd9a33bc,
         type: 3}
       propertyPath: m_RootOrder
