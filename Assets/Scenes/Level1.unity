@@ -1921,6 +1921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14abb7f54e3dfc846858704f2117cbdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 3eca156f552b07c47886a58efa2416c2, type: 3}
   scene: 2
   player: {fileID: 809604114}
 --- !u!1001 &1164811194
@@ -3207,7 +3208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4999d69dcf24ebf43ab94e51fe12dab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tip: {fileID: 0}
+  shootSFX: {fileID: 8300000, guid: 8ac3a04313078a9409107c677444044c, type: 3}
   player: {fileID: 809604114}
 --- !u!1 &1734226699
 GameObject:

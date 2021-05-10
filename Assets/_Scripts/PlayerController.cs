@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
    private GameObject tip;
    
    GameObject moveableOject;
+   public AudioClip shootSFX; 
+   public AudioClip movingSFX; 
+   public AudioClip coinSFX; 
+
+
    
    float y = 0;
    float x = 0;
@@ -113,9 +118,12 @@ public class PlayerController : MonoBehaviour
                 isFirstTime = true;
             }
         else if (isWallLeft || isWallRight){
+
             if (!isFirstTime)
                 y -= _gravidade/50 * Time.deltaTime;
             else{
+                AudioManager.PlaySFX(shootSFX);
+
                 isFirstTime = false;
                 y = 0;} 
             if (Input.GetKeyDown(KeyCode.Space)){
@@ -167,6 +175,8 @@ public class PlayerController : MonoBehaviour
             if(Physics.Raycast(playerCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition), out hit, 5)){ 
                 if (hit.collider.tag == "Moveable"){ 
                     isMoving = true;
+                    AudioManager.PlaySFX(movingSFX);
+
                     moveableOject = hit.collider.gameObject;}
                 
                 }
@@ -200,6 +210,7 @@ public class PlayerController : MonoBehaviour
     } 
     void OnControllerColliderHit(ControllerColliderHit hit){
         if (hit.collider.tag == "Coin"){
+            AudioManager.PlaySFX(coinSFX);
             Destroy(hit.collider.gameObject);
             gm.coins++; 
         }

@@ -10,6 +10,8 @@ public class QuestionMark : MonoBehaviour
     private GameObject tip; 
 
     GameManager gm;
+    public AudioClip shootSFX; 
+
 
     public GameObject player;
     // Start is called before the first frame update
@@ -37,8 +39,10 @@ public class QuestionMark : MonoBehaviour
 
 
         // Destroy (this.gameObject);
-        if (Vector3.Distance(this.transform.position,player.transform.position) < 7.0f)
-            tip.gameObject.SetActive(true);
+        if (Vector3.Distance(this.transform.position,player.transform.position) < 7.0f){
+            AudioManager.PlaySFX(shootSFX);
+
+            tip.gameObject.SetActive(true);}
 
   } 
 

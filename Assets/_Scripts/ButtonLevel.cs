@@ -6,6 +6,7 @@ public class ButtonLevel : MonoBehaviour
 {
 
     private GameManager gm;
+    public AudioClip sfx;
 
     public Loader.Scene scene ;
     public GameObject player;
@@ -28,6 +29,7 @@ public class ButtonLevel : MonoBehaviour
         Debug.Log(gm.coins);
         Debug.Log(gm.totalCoins);
         if (Vector3.Distance(this.transform.position,player.transform.position) < 7 && gm.coins >= gm.totalCoins){ 
+            AudioManager.PlaySFX(sfx);
             if (gm.currentLevel == GameManager.Level.Level4 )
               gm.ChangeState(GameManager.GameState.ENDGAME);
             else {

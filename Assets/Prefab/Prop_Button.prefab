@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14abb7f54e3dfc846858704f2117cbdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 3eca156f552b07c47886a58efa2416c2, type: 3}
   scene: 0
   player: {fileID: 0}
 --- !u!65 &3494083080767105607

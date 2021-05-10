@@ -232,7 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8871b719f8bc96d499b3511b3626d75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tip: {fileID: 0}
+  shootSFX: {fileID: 8300000, guid: 47d1d687113559841b1f19bab9e9ea22, type: 3}
+  movingSFX: {fileID: 8300000, guid: 69e16c4152d069d45b5b5d6315aee4f7, type: 3}
+  coinSFX: {fileID: 8300000, guid: 1aaaebc34132cc541a1d5f75c1b631b1, type: 3}
   horizontalJump: 12
   isWall:
     serializedVersion: 2
